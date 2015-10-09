@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta  charset="utf-8">
+<meta  name="generator" content="Org-mode">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title"></h1>
+<nav id="table-of-contents">
+<h2>Table des matières</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#environnementdetravail">L'environnement informatique</a></li>
+<li><a href="#prisedenotes">La prise de notes</a>
+<ul>
+<li><a href="#sec-3-1">copmerenz vosu ec uqi ets ércit ?</a></li>
+<li><a href="#retranscription">La retranscription</a></li>
+</ul>
+</li>
+<li><a href="#miseenformetextuelle">La mise en forme textuelle</a></li>
+<li><a href="#corrmanuelle">La correction manuelle</a></li>
+<li><a href="#lacorrectionautomatique">La correction automatique assistée</a></li>
+<li><a href="#miseenformebureau">La mise en forme pour lecteurs de bureau</a></li>
+<li><a href="#textetaudio"><span class="todo TODO">TODO</span> Une interface unique pour le son et l'écrit</a></li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-introduction" class="outline-2">
+<h2 id="introduction"><a id="sec-1" name="sec-1"></a>Introduction</h2>
+<div class="outline-text-2" id="text-introduction">
+<p>
+Ce document présente une méthode de prise de notes issue d'expériences
+auprès  de sociétés  d'études  en  marketing et  opinion  à Paris,  en
+France, depuis juillet 2006.
+</p>
+
+<p>
+Les  sociétés  d'études organisent  des  réunions  durant lesquels  un
+chargé de la  société teste des concepts auprès  de représentants d'un
+public cible  afin de  recueillir leurs réactions.  Plusieurs réunions
+composent  une  étude  et  à   chaque  réunion  sa  rotation  dans  la
+présentation  des concepts.  Le  déroulé général  respecte un  « guide
+d'animation ».
+</p>
+
+<p>
+Les  réunions se  déroulent  dans des  salles  spécialisées munies  de
+glaces   sans   teint   dissimulant   une   salle   d'observation   où
+commanditaires et collaborateurs peuvent assister à la session sans la
+perturber.  Un  dispositif  de  captage  audio  et  vidéo  sert  à  la
+transmission du son  &#x2013; de l'image en cas d'abscence  de glace &#x2013; dans
+la salle d'observation et à l'enregistrement de la réunion.
+</p>
+
+<p>
+Le preneur  de notes  travaille le  plus souvent  à l'intérieur  de la
+salle  de réunion  même  s'il se  place en  dehors  du cercle  virtuel
+dessiné  par  l'animateur  et  les  participants.  Il  est  chargé  de
+recueillir les propos échangés sur son ordinateur.
+</p>
+
+<p>
+En cas  d'absence du  preneur de note,  celui-ci peut  retranscrire la
+réunion à partir des enregistrements.
+</p>
+
+<p>
+Les  informations  collectées  sont  pondérées et  analysées  par  les
+chargés  d'études   et  donnent  lieu   à  un  rapport   présenté  aux
+commanditaires.
+</p>
+
+<p>
+La prise de notes  joue un rôle important dans la  mesure où il s'agit
+de  matière la  plus accessible  et la  plus maniable  pour un  chargé
+d'étude  souhaitant   croiser  et   analyser  les  résultats   de  ses
+réunions.  Retrouver  les  échanges illustrant  une  tendance  commune
+vis-à-vis d'un  concept au milieu d'heures  d'enregistrements audio ou
+vidéo est exclu en raison des délais et des ressources humaines qu'une
+telle opération requerrait.
+</p>
+
+<p>
+Le projet présentée ici tient compte d'un des scénarios d'exploitation
+possibles des prises de notes en phase de traitement et d'analyse : le
+repérage et  le découpage de séquences  audio à l'aide de  la prise de
+notes.
+</p>
+
+<p>
+<del>L'interface se présentera sous la  forme d'un document web sur lequel certaines parties sont  interactives et permettent à  un lecteur média incorporé<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> à la page de jouer la portion audio sélectionnée.</del>
+</p>
+</div>
+</div>
+<div id="outline-container-environnementdetravail" class="outline-2">
+<h2 id="environnementdetravail"><a id="sec-2" name="sec-2"></a>L'environnement informatique</h2>
+<div class="outline-text-2" id="text-environnementdetravail">
+<p>
+À partir d'un certain niveau d'activité (une ou plusieurs réunions par
+jour, d'une à trois heures, pour un rendu le lendemain), un preneur de
+notes bute contre les limitations des logiciels de traitement de texte
+conventionnels tels que le quasi hégémoniques Microsoft Word&trade;, en
+raison de la quantité de matière à  traiter (de 30 à 50 pages pour une
+réunion de 3h) et de l'ergonomie de ces logiciels.
+</p>
+
+<p>
+Une réflexion  poussée sur le  statut du texte en  informatique croise
+naturellement le chemin du système d'exploitation Unix.
+</p>
+
+<p>
+<div class="bs-callout  bs-callout-info">«Unix a initialement
+été  conçu  pour  disposer   de  nombreux  petits  programmes,  chacun
+effectuant une seule  tâche, agissant le plus souvent sur  des flux de
+<code>texte</code> et  pouvant être interconnectés  par le biais  de pipes»<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>
+</div>
+</p>
+
+<p>
+En  raison de  la  place  centrale que  recouvre  le  <code>texte</code> dans  la
+définition de base  de ce système d'exploitation,  Unix s'impose comme
+l'environnement  de travail  ultime  pour la  manipulation de  données
+textuelles.
+</p>
+
+<p>
+Bien   qu'il  ne   soit   pas  nécessaire   d'abandonner  le   système
+d'exploitation Windows&trade; pour arriver aux mêmes résultats, adopter
+le   système  GNU/Linux   est  un   investissement  globalement   très
+enrichissant. 
+</p>
+
+<p>
+Ayant changé de système  d'exploitation, nous allons également adopter
+un nouvel éditeur de texte. Sans rien retirer au mérites de Vim<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>,
+Emacs<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup> sera cet éditeur. Les mêmes opérations sont possibles avec
+le premier,  mais réclament une mise  en oeuvre autre qui  ne sera pas
+abordée.
+</p>
+
+<p>
+Emacs est  un éditeur  de texte puissant  qui intègre  un interpréteur
+Lisp<sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>, langage qui sera utilisé pour écrire une grande partie des
+fonctions de traitement de texte.
+</p>
+
+<p>
+Le choix d'Emacs  est renforcé par une expérience réussie  d'aide à la
+prise  en  main de  cet  éditeur  auprès  d'un  public peu  averti  en
+informatique  en   vue  de   la  réalisation  de   transcriptions.  La
+compréhension et  la maîtrise de  cet outil se  font à une  vitesse et
+avec  une   facilité  surprenantes   malgré  l'exotisme   apparent  de
+l'éditeur.
+</p>
+
+<p>
+Cet accompagnement se fait en insistant sur les composantes de base de
+l'environnement UNIX, l'usage d'Emacs  à l'intérieur d'un émulateur de
+terminal étant privilégié.<sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup>
+</p>
+
+<p>
+Nous allons  considérer la prise de  notes dans un processus  dont les
+composants sont : <a id="etapes" name="etapes"></a>
+</p>
+<ul class="org-ul">
+<li><a href="#prisedenotes">La prise de notes</a>
+<ul class="org-ul">
+<li><a href="#retranscription">La retranscription</a>
+</li>
+</ul>
+</li>
+<li><a href="#miseenformetextuelle">La mise en forme textuelle</a>
+</li>
+<li><a href="#corrmanuelle">La correction manuelle</a>
+</li>
+<li><a href="#lacorrectionautomatique">La correction automatique assistée</a>
+</li>
+<li><a href="#miseenformebureau">La mise en forme pour lecteurs de bureau</a> (web ou .*Office)
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prisedenotes" class="outline-2">
+<h2 id="prisedenotes"><a id="sec-3" name="sec-3"></a>La prise de notes</h2>
+<div class="outline-text-2" id="text-prisedenotes">
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">copmerenz vosu ec uqi ets ércit ?</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Pour favoriser la vitesse à la  prise, la correction est déléguée à un
+processus indépendant.<sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup>
+</p>
+
+<p>
+Cet email  viral illustre, au delà de la justesse de  son contenu, la
+marge  de manoeuvre  possible  entre  la composition  du  texte et  sa
+lecture (sa recomposition) :
+</p>
+
+<pre class="example">
+cuocuo  si  vuos  pvueoz  lrie  ccei, vuos  aevz  asusi  nu  dôrle  de
+cvreeau. Puveoz-vuos  lrie ceci?  Seleuemnt 55  porsnenes sur  cnet en
+snot cpalabes.Je  n'en cyoaris  pas mes  yuex que  je sios  cabaple de
+cdrpormendre  ce  que je  liasis.  Le  povuoir phoémanénl  du  crveeau
+huamin. Soeln une rcheerche fiat à l'Unievristé de Cmabridge, il n'y a
+pas d'iromtpance  sur l'odrre dnas  luqeel les lerttes snot,  la suele
+cohse imotprante  est que la  priremère et  la derènire letrte  du mot
+siot à la bnone palce. La raoisn  est que le ceverau hmauin ne lit pas
+les mtos par letrte mias ptuôlt  cmome un tuot. Étonannt n'est-ce pas?
+Et moi  qui ai tujoours  psneé que  svaoir élpeer éatit  ipomratnt! Si
+vuos poevuz le lrie, fitaes le svirue !!!
+</pre>
+
+<p>
+La sténotypie,  méthode qui  détient le  record de  vitesse d'écriture
+avec près de 240  mots à la minutes pour le  français, s'appuie sur un
+mécanisme   apparenté :  le   sténotypiste   revient   sur  la   prise
+sténotypique après la réunion pour  la recoder. Contrairement à ce qui
+se produit avec le texte  précédent, le sténotypiste s'appuiera sur un
+mécanisme à demi inconscient de  recomposition phonique plutôt que par
+lettre.<sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup>
+</p>
+
+<p>
+Nous allons donc user de cette  aptitude du cerveau à la recomposition
+pour nous affranchir  de la justesse de la frappe  pendant la prise de
+notes au profit de la vitesse.
+</p>
+
+<p>
+Emacs  nous  sera là  aussi  d'une  grande  aide. La  construction  du
+dictionnaire des abréviation est facilitée par l'interface minimaliste
+qui  supplante  la superposition  des  boites  de dialogues  dans  les
+logiciels de traitement de texte grand public.
+</p>
+</div>
+</div>
+<div id="outline-container-retranscription" class="outline-3">
+<h3 id="retranscription"><a id="sec-3-2" name="sec-3-2"></a>La retranscription</h3>
+<div class="outline-text-3" id="text-retranscription">
+
+<p>
+La retranscription<sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup> se déroule dans le même environnement que la
+prise  de notes  en  direct,  avec l'avantage  de  pouvoir revenir  en
+arrière si des éléments d'importance  échappent à la vitesse de saisie
+de l'opérateur.
+</p>
+
+<p>
+La retranscription  s'appuie sur  les possibilités  d'interaction avec
+des programmes externes qu'offre emacs. L'idée de base est d'interagir
+avec la lecture audio sans sortir de son logiciel d'édition.
+</p>
+
+<p>
+Dans le  schéma commun  de la retranscription,  l'opérateur<sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup> doit
+sans cesse changer l'interface courante entre l'éditeur de texte et le
+lecteur audio afin  de recalibrer le son joué avec  l'avancement de sa
+prise dactylographique.<sup><a id="fnr.11" name="fnr.11" class="footref" href="#fn.11">11</a></sup>
+</p>
+
+<p>
+Dans  emacs, le  contrôle de  la  lecture audio  se fait  à partir  de
+l'éditeur même  ; l'opérateur assigne les  touches de son choix  à des
+fonctions  de   contrôle  de  lecture :  retour   en  arrière,  pause,
+stop&#x2026; Il peut également insérer  dans le texte de la retranscription
+le temps courant de lecture du fichier audio.<sup><a id="fnr.12" name="fnr.12" class="footref" href="#fn.12">12</a></sup>
+</p>
+
+<p>
+La retranscription montrée  dans la vidéo suivante est  destinée à une
+exploitation rapide. La tolérance aux fautes et à la reformulation est
+relativement  grande ; la  priorité est  à l'information.  À chacun  de
+moduler son usage selon ses exigences.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-miseenformetextuelle" class="outline-2">
+<h2 id="miseenformetextuelle"><a id="sec-4" name="sec-4"></a>La mise en forme textuelle</h2>
+<div class="outline-text-2" id="text-miseenformetextuelle">
+<p>
+La séquence  vidéo précédente montre  les arrangements pris  durant la
+prise  de notes  ou la  retranscription. Ces  arrangements rendent  le
+résultat  inexploitable  en  l'état.   Outre  les  fautes  de  frappe,
+d'orthographe et de grammaire, le format « tout sur une seule ligne »,
+bien pratique pendant la prise, doit être modifié.
+</p>
+
+<p>
+Emacs-lisp, nom de la variante  du langage Lisp interprété dans emacs,
+est un langage de programmation assez simple à appréhender.
+</p>
+
+<p>
+Le programme suivant déplace le curseur à la fin du fichier courant et
+insère le mot « Bonjour » sur une nouvelle ligne.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">progn</span>
+  (goto-char (point-max))
+  (insert <span style="color: #8b2252;">"\nBonjour"</span>)
+  )
+</pre>
+</div>
+
+<p>
+Il est à donc portée de concevoir un <a href="correction.html">programme</a> qui exécutera une série
+de modifications sur le  texte brute de la prise de  notes afin de lui
+donner la présentation logique souhaitée.
+</p>
+
+<p>
+L'usage des  expressions régulières  s'avère aussi  indispensable pour
+une exploitation  poussées des informations  complémentaires contenues
+dans la prise de notes, notamment les noms des participants.
+</p>
+
+<p>
+[video correction a l'ouvrage]
+</p>
+</div>
+</div>
+
+<div id="outline-container-corrmanuelle" class="outline-2">
+<h2 id="corrmanuelle"><a id="sec-5" name="sec-5"></a>La correction manuelle</h2>
+<div class="outline-text-2" id="text-corrmanuelle">
+<p>
+La correction manuelle  se distingue de la  correction automatique par
+le fait que l'opérateur doit naviguer  dans le document à la recherche
+des erreurs à corriger.
+</p>
+
+<p>
+L'aide  à  la  correction  s'appuie  sur le  projet  libre  et  ouvert
+Aspell<sup><a id="fnr.13" name="fnr.13" class="footref" href="#fn.13">13</a></sup>.  Le raccourci  clavier se  substituera à  l'usage de  la
+sourie avec avantage.
+</p>
+
+<p>
+C'est  durant  cette  phase  que se  construira  pour  l'essentiel  le
+dictionnaire des abréviations  que nous avons vu à  l'oeuvre durant la
+phase de prise de notes.
+</p>
+
+<p>
+[vidéo flyspell abbrev brièvement-grammatical]
+</p>
+</div>
+</div>
+<div id="outline-container-lacorrectionautomatique" class="outline-2">
+<h2 id="lacorrectionautomatique"><a id="sec-6" name="sec-6"></a>La correction automatique assistée</h2>
+<div class="outline-text-2" id="text-lacorrectionautomatique">
+<p>
+Cette phase s'impose pour deux raisons :
+</p>
+
+<ul class="org-ul">
+<li>Des erreurs que le correcteur orthographique Aspell ne détecte pas ;
+</li>
+<li>La   carence  en   correcteurs   grammaticaux   libres  et   ouverts
+interfaçables avec emacs.<sup><a id="fnr.14" name="fnr.14" class="footref" href="#fn.14">14</a></sup>
+</li>
+</ul>
+
+<p>
+La solution de contournement est d'écrire un programme qui détecte des
+motifs d'intervention grammaticale et les corrige.
+</p>
+
+<p>
+L'instruction <code>1</code> de l'extrait de <a href="sanitize.html">programme</a> ci-dessous détecte les cas
+où le trait  d'union de renforcement s'impose, comme  dans «ce produit
+là» et demande à l'opérateur  d'accepter ou de refuser sa modification
+par «ce produit-là».<sup><a id="fnr.15" name="fnr.15" class="footref" href="#fn.15">15</a></sup>
+</p>
+
+<p>
+L'instruction <code>2</code>  place le curseur  au début du fichier<sup><a id="fnr.16" name="fnr.16" class="footref" href="#fn.16">16</a></sup>.
+</p>
+
+<p>
+L'instruction <code>3</code> remplace  toutes les  occurrences de  « j'ai fais »
+fautive par « j'ai fait » sans demander confirmation à l'opérateur.
+</p>
+
+<p>
+L'instruction  <code>5</code> détecte  les lettres  orphelines à  l'exception des
+lettres <code>a</code>, <code>à</code>, et <code>y</code>,  de toutes les lettres majuscules (utilisées
+en réunion  pour le codage des  concepts), de tous les  chiffres et du
+signe  <code>%</code>,   demande  à  l'opérateur  le   remplacement  souhaité  et
+l'exécute.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp"><span class="linenr">1: </span>(query-replace-regexp <span style="color: #8b2252;">"\\&lt;ce </span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">(</span><span style="color: #8b2252;">[</span><span style="color: #8b2252;">^</span><span style="color: #8b2252;"> ]*</span><span style="color: #8b2252; font-weight: bold;">\\</span><span style="color: #8b2252; font-weight: bold;">)</span><span style="color: #8b2252;"> l&#224;\\&gt;"</span>  <span style="color: #8b2252;">"ce \\1-l&#224;"</span>)
+<span class="linenr">2: </span>(goto-char (point-min))
+<span class="linenr">3: </span>(replace-regexp <span style="color: #8b2252;">"\\&lt;j'ai fais\\&gt;"</span>  <span style="color: #8b2252;">"j'ai fait"</span>)
+<span class="linenr">4: </span>(goto-char (point-min))
+<span class="linenr">5: </span>(replace-regexp <span style="color: #8b2252;">"\\&lt;[</span><span style="color: #8b2252;">^</span><span style="color: #8b2252;">a&#224;y0-9A-Z%]\\&gt;"</span>  <span style="color: #8b2252;">"\\?"</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-miseenformebureau" class="outline-2">
+<h2 id="miseenformebureau"><a id="sec-7" name="sec-7"></a>La mise en forme pour lecteurs de bureau</h2>
+<div class="outline-text-2" id="text-miseenformebureau">
+<p>
+Le  résultat  que nous  obtenons  à  ce  stade  est un  fichier  texte
+exploitable  en  l'état mais  le  client  aura  recours à  son  propre
+logiciel de  traitement de texte,  dans la  majeure partie des  cas le
+logiciel Word&trade; de la suite Microsoft Office&trade;.
+</p>
+
+<p>
+Obtenir un fichier ".doc" de Microsoft est possible de deux manières :
+</p>
+<ul class="org-ul">
+<li>Utiliser la transformation XSL à partir du XML.<sup><a id="fnr.17" name="fnr.17" class="footref" href="#fn.17">17</a></sup>
+</li>
+<li>Utiliser le format HTML.
+</li>
+</ul>
+
+<p>
+La deuxième  méthode, moins  complexe, sera privilégiée,  d'autant que
+les  logiciels  de traitements  de  texte  affichent correctement  les
+documents au format HTML.
+</p>
+
+<p>
+Le «produit» fini  est livré sans que  à aucun moment il  ne soit fait
+usage de  logiciels payants. La suite  LibreOffice est tout à  fait en
+mesure de produire les dernières  transformations en insérant la table
+des matières, les entêtes et les bas de page.
+</p>
+
+<p>
+Il reste  à déterminer  à quel  point il  est possible  d'optimiser le
+document final sans l'intervention de la moindre interface graphique.
+</p>
+</div>
+</div>
+<div id="outline-container-textetaudio" class="outline-2">
+<h2 id="textetaudio"><a id="sec-8" name="sec-8"></a><span class="todo TODO">TODO</span> Une interface unique pour le son et l'écrit</h2>
+<div class="outline-text-2" id="text-textetaudio">
+<p>
+Que  cela  soit sur  la  prise  de  notes  ou sur  la  retranscription
+l'élément  déterminant  est l'inscription  du  temps  au cours  de  la
+prise. C'est à  l'aide de cette information que la  manipulation de la
+lecture audio peut se produire.
+</p>
+
+<p>
+Sur la page  suivante une déclinaison très basique de  ce que pourrait
+être cette interface. 
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Notes de bas de page: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://www.jwplayer.com/">Jwplayer</a> est un lecteur média  web qui offre une API en langage
+Javascript  pour   en  faciliter  le   contrôle  et  en   étendre  les
+possibilités.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="http://fr.wikipedia.org/wiki/UNIX#cite_ref-43">http://fr.wikipedia.org/wiki/UNIX#cite_ref-43</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="http://www.vim.org/">http://www.vim.org/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<a href="http://www.gnu.org/software/emacs/">http://www.gnu.org/software/emacs/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+Il  est plus juste  de dire que  emacs est un  environnement de
+développement     lisp    qui     s'avère     être    un     excellent
+éditeur. <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/">http://www.gnu.org/software/emacs/manual/html_node/elisp/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+Cette approche permet de  mettre de plein pied l'opérateur dans
+l'essence du  système UNIX, un  environnement capable de  délivrer ses
+services sans  besoin d'un environnement graphique  de bureau. L'accès
+distant  à des  sessions  d'emacs et  l'édition collaborative  peuvent
+ainsi être envisagés.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+Il est toutefois possible de faire travailler deux opérateurs
+simultanément sur la même prise de notes.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<a href="https://github.com/azizyemloul/plover-france-dict">https://github.com/azizyemloul/plover-france-dict</a>  :   Projet
+personnel  de  construction  d'un  dictionnaire  et  d'un  clavier  de
+sténotypie française pour <a href="http://plover.stenoknight.com/">Plover</a>  (logiciel de sténotypie <a href="http://github.com/plover/plover/">open source</a>)
+avec  des  informations détaillés  sur  la  méthode de  sténotypie  en
+français.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+Au       fig.      Exprimer      sous       une      autre
+forme. <a href="http://www.cnrtl.fr/definition/retranscrire">http://www.cnrtl.fr/definition/retranscrire</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+Nous  allons ainsi nommer  la personne exécutant une  tache de
+prise de notes ou de retranscription.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.11" name="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
+Des solutions  logicielles et  matérielles commerciales  sont
+disponibles : pédales de contrôle, logiciels de traduction automatique
+de la parole.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.12" name="fn.12" class="footnum" href="#fnr.12">12</a></sup> <p class="footpara">
+Le  contrôle du  lecteur audio  depuis emacs  se fait  grâce à
+<a href="https://github.com/markhepburn/mplayer-mode">Mplayer-mode</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.13" name="fn.13" class="footnum" href="#fnr.13">13</a></sup> <p class="footpara">
+Le <a href="http://aspell.net/">site</a> du projet : <a href="http://aspell.net/">http://aspell.net/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.14" name="fn.14" class="footnum" href="#fnr.14">14</a></sup> <p class="footpara">
+<a href="https://github.com/mhayashi1120/Emacs-langtool">Langtool</a>, une  interface emacs  au programme  <a href="https://www.languagetool.org/">LanguageTool</a> en
+Java, a été  testé avec des résultats insatisfaisants il  y a quelques
+mois. Le projet reste toutefois actif et mériterait de nouveaux tests.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.15" name="fn.15" class="footnum" href="#fnr.15">15</a></sup> <p class="footpara">
+Le  projet de  correcteur grammatical <a href="http://www.dicollecte.org/grammalecte/">Grammalecte</a>  (ciblant la
+suite Libre-Office)  ainsi que la page  Wikipédia <a href="http://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Fautes_d'orthographe/Courantes">Fautes d'orthographe
+courantes</a>  fournissent   des  pistes  supplémentaires  de   motifs  de
+correction automatique assistée.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.16" name="fn.16" class="footnum" href="#fnr.16">16</a></sup> <p class="footpara">
+En fait, place le <b>point</b>  au début du <b>buffer</b> pour reprendre
+la terminologie exacte dans emacs.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.17" name="fn.17" class="footnum" href="#fnr.17">17</a></sup> <p class="footpara">
+Cette  solution a  été pendant un  temps celle  utilisée. Elle
+impliquait  la transformation  de la  prise  de notes  en fichier  XML
+valide au format Docbook et sa transformation à travers une feuille de
+style XSL.  Bien que  donnant de bons  résultat, cette  solution était
+limitée  et  ne  s'exprimait  pas   totalement  en  elisp.  Pour  plus
+d'information         sur         cette        méthode         visiter
+<a href="http://www.explain.com.au/oss/docbook/">http://www.explain.com.au/oss/docbook/</a>
+</p></div>
+
+
+</div>
+</div></div>
+</body>
+</html>
